@@ -1,0 +1,9 @@
+[submodule "server"]
+	path = server
+	url = git@github.com:Doe-G/shetler_page_server.git
+[submodule "backend"]
+	path = backend
+	url = git@github.com:Doe-G/shelter_page_backend.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:Doe-G/shelter_page_frontend.git

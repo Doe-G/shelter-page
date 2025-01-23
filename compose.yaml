@@ -1,0 +1,28 @@
+services:
+  shelter_mongo:
+    image: mongo
+    container_name: shelter_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: shelter_admin
+      MONGO_INITDB_ROOT_PASSWORD: ShAdm_3113
+    volumes:
+      - database:/data/db
+
+  shelter_backend:
+    build: ./backend
+    container_name: shelter_backend
+    environment:
+      MONGO_URL: mongodb://shelter_admin:ShAdm_3113@shelter_mongo:27017/?authSource=admin
+
+  shelter_frontend:
+    build: ./frontend
+    container_name: shelter_frontend
+    environment:
+      API_URL: http://shelter_backend:4000/
+
+  shelter_server:
+    build: ./server
+    ports:
+      - '80:80'
+volumes:
+  database:
