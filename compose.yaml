@@ -13,6 +13,8 @@ services:
     container_name: shelter_backend
     environment:
       MONGO_URL: mongodb://shelter_admin:ShAdm_3113@shelter_mongo:27017/?authSource=admin
+      FRONT_URL: http://shelter_frontend:3000/
+      JWT_SECRET: hRzmLEkXoqEQloxWYSCTEgMz
 
   shelter_frontend:
     build: ./frontend
